@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Screens/home_page_screen.dart';
-import 'package:splashscreen/splashscreen.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 
 void main() {
   runApp(const Application());
@@ -16,12 +16,12 @@ class Application extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'dana',
       ),
-      home: SplashScreen(
-        seconds: 14,
-        navigateAfterSeconds: HomePage(),
-        image: Image.asset('images/splash.png'),
-        backgroundColor: Colors.white,
-        photoSize: 100.0,
+      home: AnimatedSplashScreen(
+        backgroundColor: Color(0xff67C1D1),
+        splashIconSize: 350,
+        splash: 'images/splash.png',
+        nextScreen: HomePage(),
+        splashTransition: SplashTransition.scaleTransition,
       ),
     );
   }
